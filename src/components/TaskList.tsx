@@ -13,21 +13,25 @@ interface Task {
 export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState('');
+
+  function titleIsBlank() {
+    if(useState(''))
+      return alert("Coloque um Título!");
+  }
   
 
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
-    if(useState('')){
-      alert("Digite um título");
+    if(newTaskTitle == ''){
+      titleIsBlank;
+      console.log("Sem título");    
     }else{
       const newTask: Task = {
         id: Math.random() * 10,
         title: '',
         isComplete: false,
       }
-      setNewTaskTitle(newTask.title);
-  
-      setTasks([newTask]);
+      console.log(newTask);
     }
   }
 
